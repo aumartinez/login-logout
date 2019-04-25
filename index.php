@@ -36,6 +36,19 @@ if(isset($_SESSION['username'])){
    </div>
  </div>
 </div>
+	
+<div class="container">
+  <div class="row">
+	<div class="col-xs-12">
+		<nav class="nav">
+			<ul class="navitems">
+				<li><a href="#">Home</a></li>
+				<li><a href="logout.php">Logout</a></li>
+			</ul>
+		</nav>
+	</div>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
