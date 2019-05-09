@@ -27,6 +27,22 @@
   display: inline-block;
 }
 
+.navitems li a {
+  display: table-cell;
+  width: 80px;
+  height: 45px;
+  padding: 5px;
+  background-color: #ccc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.navitems li a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+
 /*Login form*/
 
 .form-signin {
