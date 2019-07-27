@@ -18,7 +18,7 @@ if($submit){
         include 'inc/functions.php';
         
         $getUser =	"SELECT *
-        FROM kb_users
+        FROM users
         WHERE username = '$username'";
         
         $getUserQuery = mysqli_query($conx, $getUser);
@@ -37,7 +37,7 @@ if($submit){
         $userpass = substr($crypted,strlen($salt));
         
         $matchPass =	"SELECT *
-        FROM kb_users
+        FROM users
         WHERE username = '$username' 
         AND userpass1 = '$userpass'";
         
@@ -59,7 +59,7 @@ if($submit){
             $newcrypted = substr(crypt($originalpass, $newsalt),strlen($newsalt));
             $newpass = $newcrypted;
             
-            $sql =	"UPDATE kb_users
+            $sql =	"UPDATE users
             SET userpass1 = '$newpass', userpass2= '$newsalt'
             WHERE username = '$username'";
             
