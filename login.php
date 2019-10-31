@@ -3,13 +3,17 @@
 
 session_start();
 
+include 'inc/mysqlconnect.php';
+
 $username = "";
 $userpass = "";
 
-isset($_POST['username'])?$username = $_POST['username']:$username = false;
-isset($_POST['userpass'])?$userpass = trim($_POST['userpass']):$userpass = false;
-isset($_POST['userpass'])?$originalpass = trim($_POST['userpass']):$originalpass = false;
+//Avoid SQL injection through user/pass input
+isset($_POST['username'])?$username = mysqli_real_escape_string($conx, trim($_POST['username'])):$username = false;
+isset($_POST['userpass'])?$userpass = mysqli_real_escape_string($conx, trim($_POST['userpass'])):$userpass = false;
+isset($_POST['userpass'])?$originalpass = mysqli_real_escape_string($conx, trim($_POST['userpass'])):$originalpass = false;
 isset($_POST['submit'])?$submit = $_POST['submit']:$submit=false;
+mysqli_close($conx);
 
 if($submit){
     if($username && $userpass){
