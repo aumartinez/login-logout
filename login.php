@@ -13,6 +13,7 @@ isset($_POST['username'])?$username = mysqli_real_escape_string($conx, trim($_PO
 isset($_POST['userpass'])?$userpass = mysqli_real_escape_string($conx, trim($_POST['userpass'])):$userpass = false;
 isset($_POST['userpass'])?$originalpass = mysqli_real_escape_string($conx, trim($_POST['userpass'])):$originalpass = false;
 isset($_POST['submit'])?$submit = $_POST['submit']:$submit=false;
+
 mysqli_close($conx);
 
 if($submit){
