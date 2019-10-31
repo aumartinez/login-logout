@@ -80,14 +80,13 @@ if($submit){
         }		
         
         else{
-            $_SESSION['logged'] = false;						
-            mysqli_close($conx);
-            header_remove(); 
+            header('HTTP/1.0 401 Unauthorized');
+	    $_SESSION['logged'] = false;						
+            mysqli_close($conx);            
         }
     }
     
-    $_SESSION['logged'] = false;
-    header_remove(); 
+    $_SESSION['logged'] = false;    
 }
 
 ?>
